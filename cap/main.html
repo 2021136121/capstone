@@ -177,6 +177,100 @@
                 height: 100px;
             }
         }
+
+        .reservation-section {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button[type="submit"] {
+    background-color: rgb(69, 140, 238);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(50, 110, 200);
+}
+
+.reservation-section {
+    display: none; /* 처음엔 숨김 상태 */
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button[type="submit"] {
+    background-color: rgb(69, 140, 238);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(50, 110, 200);
+}
+
     </style>
 </head>
 <body>
@@ -188,7 +282,7 @@
         </header>
         <nav>
             <a href="#">홈</a>
-            <a href="#">서비스</a>
+            <a href="#" id="reserveBtn">예약하기</a>
             <a href="#">고객 후기</a>
             <a href="#">문의하기</a>
             <a href="#">파트너 지원</a>
@@ -280,10 +374,67 @@
         </div>
     </div>
 
+    <div class="container reservation-section" id="reservation">
+        <h2>예약하기</h2>
+        <form class="reservation-form">
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">전화번호</label>
+                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+            </div>
+            <div class="form-group">
+                <label for="petName">반려동물 이름</label>
+                <input type="text" id="petName" name="petName" placeholder="반려동물 이름" required>
+            </div>
+            <div class="form-group">
+                <label for="warning">반려동물 주의사항</label>
+                <input type="warning" id="warning" name="warning" placeholder="반려동물을 맡을 때 주의사항을 말씀해주세요" required>
+            </div>
+            <div class="form-group">
+                <label for="service">서비스 선택</label>
+                <select id="service" name="service" required>
+                    <option value="">-- 선택하세요 --</option>
+                    <option value="bath">목욕 & 미용</option>
+                    <option value="hotel">호텔 & 데이케어</option>
+                    <option value="health">건강 체크</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">희망 날짜</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">예약하기</button>
+        </form>
+    </div>
+    
+
     <div class="footer">
         <p>문의: 010-1234-5678 | 이메일: petcare@example.com</p>
         <p>© 2025 펫 케어 서비스</p>
     </div>
+    <script>
+        document.getElementById('reserveBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+    
+            // 배너 숨기기
+            document.querySelector('.main-banner').style.display = 'none';
+    
+            // 기존 콘텐츠(서비스, 후기 등) 숨기기
+            document.querySelectorAll('.container').forEach(container => {
+                container.style.display = 'none';
+            });
+    
+            // 예약 폼만 보이기
+            document.querySelector('.reservation-section').style.display = 'block';
+    
+            // 스크롤 맨 위로
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    
 
 </body>
 </html>
