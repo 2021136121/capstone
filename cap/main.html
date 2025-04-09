@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펫 케어 서비스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .header-container {
+         display: flex;
+         justify-content: space-between; /* 제목은 왼쪽, 메뉴는 오른쪽 정렬 */
+         align-items: center;
+         background-color: rgb(69, 140, 238); /* 배경색 통일 */
+         padding: 15px 20px;
+        }
+
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 로고와 텍스트 간격 */
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            background-color: rgb(69, 140, 238);
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        nav a::after {
+            content: "|";
+            color: white;
+            margin-left: 10px;
+        }
+
+        nav a:last-child::after {
+            content: ""; /* 마지막 메뉴에는 | 없앰 */
+        }
+
+        .main-banner {
+            background: url('https://cdn.imweb.me/upload/S202207202685e30f16e24/8b48c67f8cdf6.jpeg') no-repeat center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-section, .reviews {
+            margin-top: 30px;
+        }
+
+        .service-box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 30%;
+                padding: 20px;
+                background-color: #fff8e1;
+                border-radius: 10px;
+                margin: 10px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .service-icon {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+
+        .reviews {
+            margin-top: 40px;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .review-box {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .review-content {
+            text-align: center;
+        }
+
+        .stars {
+            color: gold;
+            font-size: 18px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
+
+            .review-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .review-box img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <header>
+            <img src="./image/14257512.png" class="logo">
+            <span class="site-title">케어 펫</span>
+        </header>
+        <nav>
+            <a href="#">홈</a>
+            <a href="#">서비스</a>
+            <a href="#">고객 후기</a>
+            <a href="#">문의하기</a>
+            <a href="#">파트너 지원</a>
+        </nav>
+    </div>
+
+    <div class="main-banner">
+        우리 아이에게 최고의 케어를!
+    </div>
+
+    <div class="container">
+        <h2>우리의 서비스</h2>
+        <div class="service-box">
+            <div class="service-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="목욕 & 미용" class="service-icon">
+                <h3>목욕 & 미용</h3>
+                <p>전문가의 손길로 깨끗하고 예쁘게!</p>
+            </div>
+            <div class="service-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="호텔 & 데이케어" class="service-icon">
+                <h3>호텔 & 데이케어</h3>
+                <p>안전하고 편안한 환경 제공</p>
+            </div>
+            <div class="service-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920072.png" alt="건강 체크" class="service-icon">
+                <h3>건강 체크</h3>
+                <p>정기적인 건강 검진과 상담</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container reviews">
+        <h2>고객 후기</h2>
+
+        <div class="review-grid">
+            <div class="review-box">
+                <img src="https://img.freepik.com/free-photo/cute-white-pomeranian-dog-chair_53876-138564.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>김민수</strong></p>
+                    <p>"정말 믿을 수 있는 서비스! 우리 강아지가 좋아해요!"</p>
+                    <p class="stars">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+
+            <div class="review-box">
+                <img src="https://21gram.blog/wp-content/uploads/2023/10/%EA%B0%95%EC%95%84%EC%A7%80-%EC%9E%85%EB%B2%8C%EB%A6%BC-scaled.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>이영희</strong></p>
+                    <p>"깔끔하고 친절한 케어! 추천합니다."</p>
+                    <p class="stars">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+
+            <div class="review-box">
+                <img src="https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>박지훈</strong></p>
+                    <p>"다음에도 꼭 예약할게요! 강아지가 편안해했어요."</p>
+                    <p class="stars">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+
+            <div class="review-box">
+                <img src="https://dimg.donga.com/wps/NEWS/IMAGE/2022/01/28/111500268.2.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>최은정</strong></p>
+                    <p>"직원분들이 친절하고 시설도 좋아요!"</p>
+                    <p class="stars">⭐⭐⭐⭐☆</p>
+                </div>
+            </div>
+
+            <div class="review-box">
+                <img src="https://shop.peopet.co.kr/data/goods/796/2024/03/27385_temp_17115950830159view.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>오세훈</strong></p>
+                    <p>"우리 강아지가 행복해하는 모습이 보였어요!"</p>
+                    <p class="stars">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+
+            <div class="review-box">
+                <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202105/25/holapet/20210525081724428qquq.jpg" alt="강아지 사진">
+                <div class="review-content">
+                    <p><strong>한지우</strong></p>
+                    <p>"이제 여기만 이용할 거예요!"</p>
+                    <p class="stars">⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>문의: 010-1234-5678 | 이메일: petcare@example.com</p>
+        <p>© 2025 펫 케어 서비스</p>
+    </div>
+
+</body>
+</html>
